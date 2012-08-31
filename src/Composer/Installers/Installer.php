@@ -26,7 +26,8 @@ class Installer extends LibraryInstaller
         'silverstripe' => 'SilverStripeInstaller',
         'symfony1'     => 'Symfony1Installer',
         'wordpress'    => 'WordPressInstaller',
-        'zend'         => 'ZendInstaller'
+        'zend'         => 'ZendInstaller',
+	'flow3'	       => 'Flow3Installer'
     );
 
     /**
