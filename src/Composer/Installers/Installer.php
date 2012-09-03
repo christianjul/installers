@@ -27,7 +27,7 @@ class Installer extends LibraryInstaller
         'symfony1'     => 'Symfony1Installer',
         'wordpress'    => 'WordPressInstaller',
         'zend'         => 'ZendInstaller',
-	'flow3'	       => 'Flow3Installer'
+		'flow3'	       => 'Flow3Installer'
     );
 
     /**
