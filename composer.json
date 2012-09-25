@@ -1,5 +1,5 @@
 {
-    "name": "composer/installers",
+    "name": "flow3/composer-installers",
     "type": "composer-installer",
     "license": "MIT",
     "description": "A multi-framework Composer library installer",
@@ -7,7 +7,7 @@
         "installer", "cakephp", "laravel", "kohana",
         "li3", "lithium", "fuelphp",
         "codeigniter", "symfony", "phpbb", "ppi",
-        "joomla", "wordpress", "drupal", "zend", "silverstripe"
+        "joomla", "wordpress", "drupal", "zend", "silverstripe", "FLOW3"
     ],
     "homepage": "http://composer.github.com/installers/",
     "authors": [
