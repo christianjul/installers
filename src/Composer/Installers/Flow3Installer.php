@@ -14,4 +14,14 @@ class Flow3Installer extends BaseInstaller
 		$vars['name'] = str_replace('\\','.',$namespace);
 		return $vars;
 	}
+
+	public function getInstallPath() {
+		$type = $this->package->getType();
+		$packageLocation = strtolower(substr($type, strpos($type, '-') + 1));
+		if (substr($type, 0, 5) === 'flow3') {
+			$this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . '/{$name}/';
+		}
+		return parent::getInstallPath();
+	}
+
 }
