@@ -36,9 +36,11 @@ class Flow3Installer extends BaseInstaller
         }
 
         $autoload = $this->package->getAutoload();
-        $namespace = key($autoload['psr-0']);
-        $vars['name'] = str_replace('\\', '.', $namespace);
-
+        if (is_array($autoload))
+        {
+            $namespace = key($autoload['psr-0']);
+            $vars['name'] = str_replace('\\', '.', $namespace);
+        }
         return $vars;
     }
 }
