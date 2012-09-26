@@ -4,7 +4,8 @@ namespace Composer\Installers;
 /**
  * An installer to handle FLOW3 specifics when installing packages.
  */
-class Flow3Installer extends BaseInstaller {
+class Flow3Installer extends BaseInstaller
+{
 
     /**
      * Modify the package name to be a FLOW3 style key.
@@ -12,17 +13,22 @@ class Flow3Installer extends BaseInstaller {
      * @param array $vars
      * @return array
      */
-    public function inflectPackageVars($vars) {
+    public function inflectPackageVars($vars)
+    {
 
         // infer package location from package type
         $packageLocation = strtolower(substr($vars['type'], strpos($vars['type'], '-') + 1));
-        switch ($packageLocation) {
+        switch ($packageLocation)
+        {
             case 'package':
                 $this->locations['package'] = 'Packages/Application/{$name}/';
                 break;
             case 'plugin':
             case 'site':
                 $this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . 's/{$name}/';
+                break;
+            case 'build':
+                $this->locations['package'] = 'Build/{$name}/';
                 break;
             default:
                 $this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . '/{$name}/';
