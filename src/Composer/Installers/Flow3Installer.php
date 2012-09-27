@@ -28,7 +28,7 @@ class Flow3Installer extends BaseInstaller
                 $this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . 's/{$name}/';
                 break;
             case 'build':
-                $this->locations['package'] = 'Build/{$name}/';
+                $this->locations['build'] = 'Build/{$name}/';
                 break;
             default:
                 $this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . '/{$name}/';
@@ -36,7 +36,7 @@ class Flow3Installer extends BaseInstaller
         }
 
         $autoload = $this->package->getAutoload();
-        if (is_array($autoload))
+        if (isset($autoload['psr-0']) && is_array($autoload['psr-0']))
         {
             $namespace = key($autoload['psr-0']);
             $vars['name'] = str_replace('\\', '.', $namespace);
