@@ -2,13 +2,13 @@
 namespace Composer\Installers;
 
 /**
- * An installer to handle FLOW3 specifics when installing packages.
+ * An installer to handle TYPO3 Flow specifics when installing packages.
  */
-class Flow3Installer extends BaseInstaller
+class FlowInstaller extends BaseInstaller
 {
 
     /**
-     * Modify the package name to be a FLOW3 style key.
+     * Modify the package name to be a TYPO3 Flow style key.
      *
      * @param array $vars
      * @return array
