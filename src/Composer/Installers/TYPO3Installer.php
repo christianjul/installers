@@ -4,7 +4,7 @@ namespace Composer\Installers;
 /**
  * An installer to handle TYPO3 Flow specifics when installing packages.
  */
-class FlowInstaller extends BaseInstaller
+class TYPO3Installer extends BaseInstaller
 {
 
     /**
@@ -16,8 +16,11 @@ class FlowInstaller extends BaseInstaller
     public function inflectPackageVars($vars)
     {
 
+	if (substr(strpos($vars['type'], 0, strpos(strpos($vars['type'], '-',6)) !== 'typo3-flow') {
+	   throw new \UnexpectedValueException('Currrently only TYPO3 Flow packages are supported by the TYPO3 installer');
+	}
         // infer package location from package type
-        $packageLocation = strtolower(substr($vars['type'], strpos($vars['type'], '-') + 1));
+        $packageLocation = strtolower(substr($vars['type'], 11));
         switch ($packageLocation)
         {
             case 'package':
