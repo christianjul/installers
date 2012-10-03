@@ -25,17 +25,17 @@ class TYPO3Installer extends BaseInstaller
         switch ($packageLocation)
         {
             case 'package':
-                $this->locations['package'] = 'Packages/Application/{$name}/';
+                $this->locations['flow-package'] = 'Packages/Application/{$name}/';
                 break;
             case 'plugin':
             case 'site':
-                $this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . 's/{$name}/';
+                $this->locations['flow-' . $packageLocation] = 'Packages/' . ucfirst($packageLocation) . 's/{$name}/';
                 break;
             case 'build':
-                $this->locations['build'] = 'Build/{$name}/';
+                $this->locations['flow-build'] = 'Build/{$name}/';
                 break;
             default:
-                $this->locations[$packageLocation] = 'Packages/' . ucfirst($packageLocation) . '/{$name}/';
+                $this->locations['flow-' . $packageLocation] = 'Packages/' . ucfirst($packageLocation) . '/{$name}/';
                 break;
         }
 
