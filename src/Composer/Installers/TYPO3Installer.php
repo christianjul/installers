@@ -16,7 +16,8 @@ class TYPO3Installer extends BaseInstaller
     public function inflectPackageVars($vars)
     {
 
-	if (substr(strpos($vars['type'], 0, strpos(strpos($vars['type'], '-', 6)) !== 'typo3-flow') {
+	if (strlen($vars['type']) <= 11 || substr($vars['type'], 0, 11) !== 'typo3-flow-')
+	{
 	   throw new \UnexpectedValueException('Currrently only TYPO3 Flow packages are supported by the TYPO3 installer');
 	}
         // infer package location from package type
