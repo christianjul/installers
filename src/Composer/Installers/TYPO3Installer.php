@@ -44,7 +44,12 @@ class TYPO3Installer extends BaseInstaller
         {
             $namespace = key($autoload['psr-0']);
             $vars['name'] = str_replace('\\', '.', $namespace);
-        }
+        } else {
+			$extraSettings = $this->package->getExtra();
+			if(isset($extraSettings['typo3/flow']['case-sensitive-package-name'])) {
+				$vars['name'] = $extraSettings['typo3flow']['case-sensitive-package-name'];
+			}
+		}
         return $vars;
     }
 }
