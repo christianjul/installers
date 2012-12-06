@@ -47,7 +47,7 @@ class TYPO3Installer extends BaseInstaller
         } else {
 			$extraSettings = $this->package->getExtra();
 			if(isset($extraSettings['typo3/flow']['case-sensitive-package-name'])) {
-				$vars['name'] = $extraSettings['typo3flow']['case-sensitive-package-name'];
+				$vars['name'] = $extraSettings['typo3/flow']['case-sensitive-package-name'];
 			}
 		}
         return $vars;
